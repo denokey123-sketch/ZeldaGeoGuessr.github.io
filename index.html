@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelda GeoGuessr</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Стили игры -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ========== ЭКРАН ВЫБОРА СЕРИИ ========== -->
+    <div id="screen-menu" class="screen active">
+        <div class="menu-container">
+            <h1 class="title">Zelda GeoGuessr</h1>
+            <p class="subtitle">The Legend of Zelda: Breath of the Wild</p>
+            <div id="series-list" class="series-list">
+                <!-- Кнопки серий генерируются в game.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ЭКРАН ИГРЫ ========== -->
+    <div id="screen-game" class="screen">
+
+        <!-- Панель информации сверху -->
+        <div id="hud">
+            <div class="hud-item">
+                <span id="hud-series-name">Серия</span>
+            </div>
+            <div class="hud-item">
+                Раунд: <span id="hud-round">1</span> / <span id="hud-total">5</span>
+            </div>
+            <div class="hud-item">
+                Очки: <span id="hud-score">0</span>
+            </div>
+        </div>
+
+        <!-- Картинка локации -->
+        <div id="location-panel">
+            <img id="location-image" src="" alt="Угадай локацию" />
+            <button id="btn-toggle-image" class="btn-collapse" title="Свернуть/развернуть">▼</button>
+        </div>
+
+        <!-- Карта -->
+        <div id="map"></div>
+
+        <!-- Кнопка подтверждения -->
+        <button id="btn-confirm" class="btn-confirm" disabled>Подтвердить</button>
+    </div>
+
+    <!-- ========== ЭКРАН РЕЗУЛЬТАТА РАУНДА ========== -->
+    <div id="screen-round-result" class="screen">
+        <div id="result-map"></div>
+        <div id="round-result-panel">
+            <h2>Результат раунда</h2>
+            <p>Расстояние: <span id="result-distance">0</span> px</p>
+            <p>Очки за раунд: <span id="result-round-score">0</span></p>
+            <p>Всего очков: <span id="result-total-score">0</span></p>
+            <button id="btn-next-round" class="btn-primary">Следующий раунд</button>
+        </div>
+    </div>
+
+    <!-- ========== ЭКРАН ИТОГОВ ИГРЫ ========== -->
+    <div id="screen-final" class="screen">
+        <div class="menu-container">
+            <h1 class="title">Игра окончена!</h1>
+            <div id="final-summary"></div>
+            <p class="final-total">Итого: <span id="final-score">0</span> / 25 000</p>
+            <button id="btn-back-menu" class="btn-primary">В меню</button>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Логика игры -->
+    <script src="game.js"></script>
+</body>
+</html>
