@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zelda GeoGuessr</title>
 
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-    <!-- Стили игры -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,16 +15,12 @@
         <div class="menu-container">
             <h1 class="title">Zelda GeoGuessr</h1>
             <p class="subtitle">The Legend of Zelda: Breath of the Wild</p>
-            <div id="series-list" class="series-list">
-                <!-- Кнопки серий генерируются в game.js -->
-            </div>
+            <div id="series-list" class="series-list"></div>
         </div>
     </div>
 
     <!-- ========== ЭКРАН ИГРЫ ========== -->
     <div id="screen-game" class="screen">
-
-        <!-- Панель информации сверху -->
         <div id="hud">
             <div class="hud-item">
                 <span id="hud-series-name">Серия</span>
@@ -40,16 +33,13 @@
             </div>
         </div>
 
-        <!-- Картинка локации -->
         <div id="location-panel">
             <img id="location-image" src="" alt="Угадай локацию" />
             <button id="btn-toggle-image" class="btn-collapse" title="Свернуть/развернуть">▼</button>
         </div>
 
-        <!-- Карта -->
         <div id="map"></div>
 
-        <!-- Кнопка подтверждения -->
         <button id="btn-confirm" class="btn-confirm" disabled>Подтвердить</button>
     </div>
 
@@ -75,10 +65,14 @@
         </div>
     </div>
 
-    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <!-- Логика игры -->
-    <script src="game.js"></script>
+    <!-- Модули игры -->
+    <script src="locations_data.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/scoring.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
 </body>
 </html>
